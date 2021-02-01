@@ -14,5 +14,6 @@ dataset = pandas.read_csv(url, names=names)
 # print(dataset.describe())
 # print(dataset.groupby('class').size())
 
-dataset.plot(kind='box', subplots=True, layout=(2,2), sharey=False)
+# dataset.plot(kind='box', subplots=True, layout=(2,2), sharey=False)
+dataset.hist()
 matplotlib.pyplot.show()
