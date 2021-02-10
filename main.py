@@ -31,8 +31,8 @@ dataset = read_csv(url, names=names)
 # Plotting Data
 # dataset.plot(kind='box', subplots=True, layout=(2,2), sharey=False)
 # dataset.hist()
-# pandas.plotting.scatter_matrix(dataset)
-# matplotlib.pyplot.show()
+# scatter_matrix(dataset)
+# pyplot.show()
 
 array = dataset.values
 x = array[:, 0:4]
