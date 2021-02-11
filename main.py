@@ -1,16 +1,21 @@
-import sys
-import scipy
-import numpy
-
+# Importing Data
 from pandas import read_csv
+
+# Plotting Data
 from pandas.plotting import scatter_matrix
 from matplotlib import pyplot
+
+# K Fold Cross Validation
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import StratifiedKFold
+
+# Evaluate Predictions
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
+
+# Models
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
@@ -55,3 +60,7 @@ for name, model in models:
 	results.append(cv_results)
 	names.append(name)
 	print('%s: %f (%f)' % (name, cv_results.mean(), cv_results.std()))
+
+pyplot.boxplot(results, labels=names)
+pyplot.title('Algorithm Comparison')
+pyplot.show()
